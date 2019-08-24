@@ -3,6 +3,15 @@ import { config, useSpring } from 'react-spring'
 import Layout from '../components/layout'
 import { AnimatedBox } from '../elements'
 import SEO from '../components/SEO'
+import Header from '../components/Header'
+import AboutJs from '../components/AboutJs'
+import Resume from '../components/Resume'
+import Portfolio from '../components/Portfolio'
+import Testimonials from  '../components/Testimonials'
+import ContactUs from '../components/ContactUs'
+import Footer from '../components/Footer'
+import resumeData from '../resumeData';
+
 
 const About = () => {
   const pageAnimation = useSpring({
@@ -15,11 +24,12 @@ const About = () => {
     <Layout>
       <SEO title="About | Jodie" desc="Hi. I'm LekoArts! You can visit my website or my other Gatsby projects." />
       <AnimatedBox style={pageAnimation} py={[6, 6, 6, 8]} px={[6, 6, 8, 6, 8, 13]}>
-        <h1>Hi. I'm LekoArts!</h1>
-        <p>
-          You can visit my <a href="https://www.lekoarts.de/en">website</a> or my other{' '}
-          <a href="https://gatsby-starter-portfolio.netlify.com">Gatsby projects</a>.
-        </p>
+        <div className="App">
+
+        <AboutJs resumeData={resumeData}/>
+        <Resume resumeData={resumeData}/>
+        
+      </div>
       </AnimatedBox>
     </Layout>
   )
